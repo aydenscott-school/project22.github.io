@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101827;
+  color: #ffffff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 38px;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.card {
+  background: #1b2638;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #60a5fa;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #111827;
+  color: white;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #60a5fa;
+}
+
+.info {
+  background: #24344d;
+  padding: 15px;
+  border-radius: 8px;
+  color: #d1d5db;
+}
+
+.checkboxes {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkboxes input {
+  width: auto;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.result-box {
+  background: #111827;
+  padding: 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-box span {
+  color: #cbd5e1;
+}
+
+.result-box strong {
+  font-size: 18px;
+}
+
+.highlight {
+  border: 2px solid #60a5fa;
+}
+
+#budgetBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.budget-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: #111827;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .grid,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+}
