@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graduate Payroll & Budget</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>💰 Graduate Payroll & Budget</h1>
+      <p>First Job Financial Planner</p>
+    </header>
+
+    <section class="card">
+      <h2>Personal Information</h2>
+
+      <div class="grid">
+        <div>
+          <label>Graduate Status</label>
+          <select id="status">
+            <option value="individual">Individual</option>
+            <option value="married">Married</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Number of Dependents</label>
+          <input type="number" id="dependents" value="0" min="0">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Taxes</h2>
+
+      <p class="info">
+        The assignment gives a $60,000 annual gross salary.
+        Federal and state tax rates were not specified, so you can enter them below.
+      </p>
+
+      <div class="grid">
+        <div>
+          <label>Federal Tax (%)</label>
+          <input type="number" id="federalTax" value="12" min="0" step="0.1">
+        </div>
+
+        <div>
+          <label>State Tax (%)</label>
+          <input type="number" id="stateTax" value="4" min="0" step="0.1">
+        </div>
+
+        <div>
+          <label>FICA (%)</label>
+          <input type="number" id="ficaTax" value="7.65" min="0" step="0.01">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Monthly Budget</h2>
+
+      <div class="grid">
+        <div>
+          <label>Housing ($)</label>
+          <input type="number" id="housing" value="2000" min="0">
+        </div>
+
+        <div>
+          <label>Car / Transportation ($)</label>
+          <input type="number" id="transportation" value="500" min="0">
+        </div>
+
+        <div>
+          <label>Utilities ($)</label>
+          <input type="number" id="utilities" value="350" min="0">
+        </div>
+
+        <div>
+          <label>Food ($)</label>
+          <input type="number" id="food" value="350" min="0">
+        </div>
+
+        <div>
+          <label>Communications ($)</label>
+          <input type="number" id="communications" value="150" min="0">
+        </div>
+
+        <div>
+          <label>Maintenance ($)</label>
+          <input type="number" id="maintenance" value="100" min="0">
+        </div>
+
+        <div>
+          <label>Entertainment ($)</label>
+          <input type="number" id="entertainment" value="200" min="0">
+        </div>
+
+        <div>
+          <label>Other Insurance ($)</label>
+          <input type="number" id="otherInsurance" value="150" min="0">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Company Sponsored Insurance</h2>
+
+      <div class="checkboxes">
+        <label>
+          <input type="checkbox" id="medical" checked>
+          Medical
+        </label>
+
+        <label>
+          <input type="checkbox" id="dental" checked>
+          Dental
+        </label>
+
+        <label>
+          <input type="checkbox" id="vision" checked>
+          Vision
+        </label>
+      </div>
+    </section>
+
+    <button onclick="calculateBudget()">Calculate Budget</button>
+
+    <section class="results card" id="results">
+      <h2>Payroll Results</h2>
+
+      <div class="result-grid">
+
+        <div class="result-box">
+          <span>Gross Annual Salary</span>
+          <strong id="grossAnnual">$0.00</strong>
+        </div>
+
+        <div class="result-box">
+          <span>Federal Tax</span>
+          <strong id="federalAmount">$0.00</strong>
+        </div>
+
+        <div class="result-box">
+          <span>State Tax</span>
+          <strong id="stateAmount">$0.00</strong>
+        </div>
+
+        <div class="result-box">
+          <span>FICA</span>
+          <strong id="ficaAmount">$0.00</strong>
+        </div>
+
+        <div class="result-box">
+          <span>Net Annual Pay</span>
+          <strong id="netAnnual">$0.00</strong>
+        </div>
+
+        <div class="result-box">
+          <span>Insurance Cost</span>
+          <strong id="insuranceAmount">$0.00</strong>
+        </div>
+
+        <div class="result-box highlight">
+          <span>NET1 Annual Pay</span>
+          <strong id="net1Annual">$0.00</strong>
+        </div>
+
+        <div class="result-box highlight">
+          <span>NET1 Monthly Pay</span>
+          <strong id="net1Monthly">$0.00</strong>
+        </div>
+
+        <div class="result-box highlight">
+          <span>Paycheck - 1st</span>
+          <strong id="paycheck">$0.00</strong>
+        </div>
+
+        <div class="result-box">
+          <span>Total Monthly Budget</span>
+          <strong id="totalBudget">$0.00</strong>
+        </div>
+
+        <div class="result-box highlight">
+          <span>Money Left Each Month</span>
+          <strong id="remaining">$0.00</strong>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Budget Breakdown</h2>
+
+      <div id="budgetBreakdown"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
